@@ -21,3 +21,8 @@ steps:
     publishWebProjects: true
     zipAfterPublish: false
     workingDirectory: '$(System.DefaultWorkingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(agent.builddirectory)'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
